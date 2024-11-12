@@ -44,19 +44,19 @@ class ThemePark
     def enjoy_ride(ride)
       case ride
       when "Roller Coaster"
-
+        puts "Enjoying the Roller Coaster... 🎢"
       when "Ferris Wheel"
         puts "Enjoying the Ferris Wheel... 🎡"
       when "Bumper Cars"
-
+        puts "Enjoying the Bumper Cars... 🚗"
       else
         puts "Unknown ride: #{ride}"
       end
     end
   
     def enjoy_rides
-      rides.each do |ride|
-        enjoy_rides(ride)
+      @rides.each do |ride|
+        enjoy_ride(ride)
       end
       puts "All rides completed!"
     end
@@ -66,7 +66,7 @@ class ThemePark
       when "Popcorn"
         puts "🍿 Grabbing popcorn..."
       when "Ice Cream"
-
+        puts "🍦 Eating ice cream..."
       when "Hot Dog"
         puts "🌭 Munching on a hot dog..."
       else
@@ -75,19 +75,20 @@ class ThemePark
     end
   
     def grab_snacks
-      snacks.each do |snack|
-        grab_snacks(snack)
+      @snacks.each do |snack|
+        grab_snack(snack)
       end
     end
   
     def start_adventure
-      welcom_message
+      welcome_message
       check_tickets
       display_rides
       enjoy_rides
       grab_snacks
+      puts "What a day at the theme park! Come back soon!"
     end
   end
   
-  Themepark.new.start_adventure
+ThemePark.new.start_adventure
   
