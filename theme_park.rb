@@ -85,6 +85,7 @@ class ThemePark
       check_tickets
       display_rides
       enjoy_rides
+      puts "Time for snacks..."
       grab_snacks
       puts "What a day at the theme park! Come back soon!"
     end
